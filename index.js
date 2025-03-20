@@ -14,7 +14,10 @@ dotenv.config();
 const app = express();
 
 await connectDB();
-app.use( cors() )
+app.use(cors({
+    origin: 'https://ubiquitous-pudding-5f852c.netlify.app', // Your frontend URL
+    credentials: true
+}));
 app.use(express.json({ strict: false }));
 app.use(cookieParser());
 
