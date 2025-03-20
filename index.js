@@ -13,7 +13,7 @@ import appliedRouter from './src/routes/applied.routes.js';
 dotenv.config();
 const app = express();
 
-connectDB();
+await connectDB();
 app.use( cors() )
 app.use(express.json({ strict: false }));
 app.use(cookieParser());
